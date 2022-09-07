@@ -1,0 +1,55 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 600px) {
+	html {	
+		padding-top: 100px;
+	}
+}
+
+.mantine-Tabs-root {
+	margin-top: 40px;
+}
+
+.mantine-Tabs-root button {
+	width: 50%;
+}
+
+.mantine-Tabs-root .mantine-Tabs-tabLabel {
+	width: 100%;
+}
+
+.tab-date {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 25px;
+	margin-top: 10px;
+}
+
+.card {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 8px;
+	border-radius: 5px;
+}
+
+.card p {
+	margin: 0;
+	text-align: center;
+}
+
+.card .summary {
+	font-weight: 600;
+}
+
+.card .teacher {
+	margin-top: 10px;
+}

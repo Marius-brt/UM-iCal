@@ -1,0 +1,24 @@
+{
+  "name": "um-ical",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@mantine/core": "^5.2.6",
+    "@mantine/hooks": "^5.2.6",
+    "next": "12.2.5",
+    "node-ical": "^0.15.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.2.5"
+  }
+}

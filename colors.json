@@ -1,0 +1,83 @@
+{
+    "colors": [
+        {
+            "bg": "#1c7ed6",
+            "badge": "blue",
+            "color": "#fff"
+        },
+        {
+            "bg": "rgb(253, 114, 114)",
+            "badge": "red",
+            "color": "#fff"
+        },
+        {
+            "bg": "rgb(173, 28, 214)",
+            "badge": "grape",
+            "color": "#fff"
+        },
+        {
+            "bg": "rgb(80, 255, 239)",
+            "badge": "cyan",
+            "color": "rgb(119, 119, 119)"
+        },
+        {
+            "bg": "rgb(238, 196, 67)",
+            "badge": "yellow",
+            "color": "#fff"
+        },
+        {
+            "bg": "rgb(230, 58, 154)",
+            "badge": "pink",
+            "color": "#fff"
+        },
+        {
+            "bg": "rgb(140, 14, 138)",
+            "badge": "purple",
+            "color": "#fff"
+        },
+        {
+            "bg": "rgb(14, 34, 140)",
+            "badge": "indigo",
+            "color": "#fff"
+        },
+        {
+            "bg": "rgb(45, 183, 151)",
+            "badge": "teal",
+            "color": "#fff"
+        },
+        {
+            "bg": "rgb(51, 185, 60)",
+            "badge": "green",
+            "color": "#fff"
+        },
+        {
+            "bg": "rgb(158, 193, 60)",
+            "badge": "lime",
+            "color": "#fff"
+        },
+        {
+            "bg": "rgb(234, 134, 45)",
+            "badge": "orange",
+            "color": "#fff"
+        }
+    ],
+    "summaries": {
+        "basesdelacomm": 0,
+        "introbd": 1,
+        "runionrentrebut": 2,
+        "introsystmes": 3,
+        "mathsdiscrtes": 4,
+        "basesdelacommmthodesdetravail": 5,
+        "initiationaudveloppement": 6,
+        "sae": 7,
+        "ppp": 8,
+        "economie": 9,
+        "devinterfacesweb": 10,
+        "gestionprojorga": 11,
+        "introarchi": 0,
+        "anglais": 1,
+        "initiationaudev": 2,
+        "lancementsae": 3
+    },
+    "last": 3
+}
