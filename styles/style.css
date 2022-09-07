@@ -4,6 +4,22 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
+  padding-bottom: 65px;
+}
+
+.next-date {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer {
+	margin-bottom: 15px;
+}
+
+.footer code {
+	white-space: nowrap;
 }
 
 @media screen and (min-width: 600px) {
@@ -14,6 +30,7 @@ body {
 
 .mantine-Tabs-root {
 	margin-top: 40px;
+	margin-bottom: 50px;
 }
 
 .mantine-Tabs-root button {
@@ -22,6 +39,12 @@ body {
 
 .mantine-Tabs-root .mantine-Tabs-tabLabel {
 	width: 100%;
+}
+
+.mantine-SimpleGrid-root {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 .tab-date {
@@ -33,7 +56,8 @@ body {
 }
 
 .card {
-	width: 100%;
+	box-sizing: content-box;
+	width: 260px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -48,8 +72,21 @@ body {
 
 .card .summary {
 	font-weight: 600;
+	font-size: 17px;
+	margin-bottom: 3px;
 }
 
 .card .teacher {
 	margin-top: 10px;
+}
+
+.card .hours {
+	font-weight: 600;
+	margin-top: 5px;
+	display: flex;
+	align-items: center;
+}
+
+.card .hours svg {
+	margin: 0 5px;
 }

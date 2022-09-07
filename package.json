@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.4",
     "@mantine/core": "^5.2.6",
     "@mantine/hooks": "^5.2.6",
+    "@tabler/icons": "^1.93.0",
     "next": "12.2.5",
     "node-ical": "^0.15.1",
     "react": "18.2.0",
