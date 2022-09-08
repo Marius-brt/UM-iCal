@@ -1,5 +1,6 @@
 const ical = require("node-ical");
 const fs = require("fs")
+const path = require('path')
 
 function isValidHttpUrl(string) {
 	let url;	
@@ -29,7 +30,7 @@ export default function handler(req, res) {
 		return response.text()
 	})
 	.then(result => {
-		let data = JSON.parse(fs.readFileSync("colors.json", {encoding: 'utf-8'}))
+		let data = JSON.parse(fs.readFileSync(path.join(process.cwd(), "colors.json"), {encoding: 'utf-8'}))
 		const events = ical.sync.parseICS(result);
 		let change = false
 		Object.values(events).forEach(el => {
