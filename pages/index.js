@@ -227,9 +227,9 @@ export default class Home extends Component {
 				tomorrow.push(GenerateCard(el, dt.colors));
 			}
 			if (today.length == 0)
-			  today.push(<Code>Bah on dirait que y'a pas cours 🤷‍♂️</Code>);
+			  today.push(<Code>Bah on dirait que y{"'"}a pas cours 🤷‍♂️</Code>);
 			if (tomorrow.length == 0)
-			  tomorrow.push(<Code>Bah on dirait que y'a pas cours 🤷‍♂️</Code>);
+			  tomorrow.push(<Code>Bah on dirait que y{"'"}a pas cours 🤷‍♂️</Code>);
 			this.setState({ today, tomorrow, loading: false });
 		  }).catch(err => {
 			  this.setState({
@@ -339,7 +339,7 @@ export default class Home extends Component {
 					<TextInput placeholder="Ton lien" id="url-input" label="Lien de ton calendrier"/>
 					<p id="error"></p>
 					<Button onClick={this.Save}>GO 🔥</Button>
-					<Code id="infos">PS: Tu peux ajouter le site à ton écran d'accueil pour accéder à ton emploie du temps encore plus rapidement. Pour cela clique sur le bouton partager puis "ajouter à l'accueil".</Code>
+					<Code id="infos">PS: Tu peux ajouter le site à ton écran d{"'"}accueil pour accéder à ton emploie du temps encore plus rapidement. Pour cela clique sur le bouton partager puis {"\""}ajouter à l{"'"}accueil{"\""}.</Code>
 				</div>
 			</>
 		);
