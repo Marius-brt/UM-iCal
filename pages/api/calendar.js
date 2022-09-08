@@ -23,7 +23,11 @@ export default function handler(req, res) {
 	};
 	  
 	fetch(req.query.ics, requestOptions)
-	.then(response => response.text())
+	.then(response => {
+		if(response.status != 200)
+			return res.status(404).send("Can't find ics file")
+		return response.text()
+	})
 	.then(result => {
 		let data = JSON.parse(fs.readFileSync("colors.json", {encoding: 'utf-8'}))
 		const events = ical.sync.parseICS(result);

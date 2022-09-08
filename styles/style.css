@@ -90,3 +90,19 @@ body {
 .card .hours svg {
 	margin: 0 5px;
 }
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.form label {
+	margin-top: 30px;
+}
+
+.form button {
+	margin-top: 20px;
+	width: 100px;
+}

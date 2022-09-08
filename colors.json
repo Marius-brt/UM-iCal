@@ -62,22 +62,22 @@
         }
     ],
     "summaries": {
-        "basesdelacomm": 0,
-        "introbd": 1,
-        "runionrentrebut": 2,
-        "introsystmes": 3,
-        "mathsdiscrtes": 4,
-        "basesdelacommmthodesdetravail": 5,
-        "initiationaudveloppement": 6,
-        "sae": 7,
-        "ppp": 8,
-        "economie": 9,
-        "devinterfacesweb": 10,
-        "gestionprojorga": 11,
-        "introarchi": 0,
-        "anglais": 1,
-        "initiationaudev": 2,
-        "lancementsae": 3
+        "basesdelacomm": 4,
+        "introbd": 5,
+        "runionrentrebut": 6,
+        "introsystmes": 7,
+        "mathsdiscrtes": 8,
+        "basesdelacommmthodesdetravail": 9,
+        "initiationaudveloppement": 10,
+        "sae": 11,
+        "ppp": 0,
+        "economie": 1,
+        "devinterfacesweb": 2,
+        "gestionprojorga": 3,
+        "introarchi": 4,
+        "anglais": 5,
+        "initiationaudev": 6,
+        "lancementsae": 7
     },
-    "last": 3
+    "last": 7
 }
