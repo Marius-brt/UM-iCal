@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }) {
 			<Code className="footer">
 				Créer par{" "}
 				<a
-				href="https://github.com/Marius-brt"
+				href="https://www.instagram.com/marius.brt/"
 				target="_blank"
 				rel="noreferrer"
 				style={{ color: "#C1C2C5" }}
