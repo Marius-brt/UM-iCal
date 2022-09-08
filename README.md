@@ -28,7 +28,7 @@ UM iCal te permet de consulter ton emploie du temps dans une interface simple. T
 * Les cours de la journée
 * Les cours de demain
 
-> UM iCal tourne sous [Next.JS](https://nextjs.org/) et tourne sur les serveurs de [Vercel](https://vercel.com/). Pour les UI, j'utilise la librairie [Mantine](https://mantine.dev/). Pour le parsing des fichier `ics`, j'utilise [Node-iCal](https://www.npmjs.com/package/node-ical).
+> UM iCal utilise [Next.JS](https://nextjs.org/) et tourne sur les serveurs de [Vercel](https://vercel.com/). Pour les UI, j'utilise la librairie [Mantine](https://mantine.dev/). Pour le parsing des fichier `ics`, j'utilise [Node-iCal](https://www.npmjs.com/package/node-ical).
 
 ## Utilisation
 
