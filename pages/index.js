@@ -308,7 +308,7 @@ export default class Home extends Component {
 			  )}
 			  <StyledTabs defaultValue="today">
 				<Tabs.List>
-				  <Tabs.Tab value="today">Aujourd'hui</Tabs.Tab>
+				  <Tabs.Tab value="today">Aujourd{"'"}hui</Tabs.Tab>
 				  <Tabs.Tab value="tomorrow">Demain</Tabs.Tab>
 				</Tabs.List>
 	
@@ -331,6 +331,7 @@ export default class Home extends Component {
 				<a
 				  href="https://github.com/Marius-brt"
 				  target="_blank"
+				  rel="noreferrer"
 				  style={{ color: "#C1C2C5" }}
 				>
 				  @marius.brt
@@ -339,6 +340,7 @@ export default class Home extends Component {
 				<a
 				  href="https://github.com/Marius-brt/UM-iCal"
 				  target="_blank"
+				  rel="noreferrer"
 				  style={{ color: "#C1C2C5" }}
 				>
 				  Github
