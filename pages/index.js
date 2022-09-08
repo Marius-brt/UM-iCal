@@ -366,6 +366,27 @@ export default class Home extends Component {
 						<Button onClick={this.Save}>Ok</Button>
 						<p id="error"></p>
 					</div>
+					<Code className="footer">
+				Créer par{" "}
+				<a
+				  href="https://github.com/Marius-brt"
+				  target="_blank"
+				  rel="noreferrer"
+				  style={{ color: "#C1C2C5" }}
+				>
+				  @marius.brt
+				</a>{" "}
+				•{" "}
+				<a
+				  href="https://github.com/Marius-brt/UM-iCal"
+				  target="_blank"
+				  rel="noreferrer"
+				  style={{ color: "#C1C2C5" }}
+				>
+				  Github
+				</a>{" "}
+				du site
+			  </Code>
 				</main>
 			</>
 		);

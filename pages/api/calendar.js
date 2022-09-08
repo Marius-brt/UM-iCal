@@ -48,8 +48,7 @@ export default function handler(req, res) {
 			fs.writeFileSync("colors.json", JSON.stringify(data, null, 4), {encoding: 'utf-8'})
 		res.status(200).json({events, colors: data});			
 	})
-	.catch(err => { 
-		console.log(err)
-		 res.status(404).send("Can't find ics file")
+	.catch(err => {
+		 res.status(404).send("Can't find ics file " + err)
 		});
 }
