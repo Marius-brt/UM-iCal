@@ -32,13 +32,17 @@ UM iCal te permet de consulter ton emploie du temps dans une interface simple. T
 
 ## Utilisation
 
-Pour pouvoir utiliser UM iCal tu doit récupérer le lien de ton fichier `ics` (fichier calendrier). Pour cela rend toi sur l'ENT puis va dans `"Planning [ton année scolaire]"`. Ensuite va sur l'onglet `iCal`. Là, tu trouveras un lien. Copie le, colle le sur [UM iCal](https://um-ical.vercel.app/) et clique sur `GO`. Ton lien sera stocker en local, pas besoin de le rentrer à chaque fois. 
+Pour pouvoir utiliser UM iCal tu doit récupérer le lien de ton fichier `ics` (fichier calendrier). Pour cela rend toi sur l'ENT puis va dans `"Planning [ton année scolaire]"`. Ensuite va sur l'onglet `iCal`. Là, tu trouveras un lien. Copie-le, colle le sur [UM iCal](https://um-ical.vercel.app/) et clique sur `GO`. Ton lien sera stocké en local, pas besoin de le rentrer à chaque fois. 
+
+<br>
+
+> PS: si tu changes les groupes séléctionnés sur ton planning, il faut que tu changes ton lien. Pour cela, clique sur `"Modifier mon lien iCal"` puis rentre le nouveau en suivant les étapes en dessus.
 
 <br>
 
 Si tu es sur mobile, tu peux ajouter [UM iCal](https://um-ical.vercel.app/) à ton écran d'accueil pour accéder à ton emploie du temps rapidement. En effet, [UM iCal](https://um-ical.vercel.app/) est une PWA (`Progressive Web App`), en gros ça fait comme une application mobile classique. Y'a 2 teams :
 
-1. Android : Clique sur les 3 points en haut à droite lorsque t'es sur le [site](https://um-ical.vercel.app/) et ensuite clique sur `"Ajouter à l'écran d'accueil"`. Et voilà !
+1. Android : Clique sur les 3 points en haut à droite lorsque t'es sur le [site](https://um-ical.vercel.app/) et ensuite cliques sur `"Ajouter à l'écran d'accueil"`. Et voilà !
 2. IOS : Clique sur l'icon `partager` (la flèche dans un carré en bas au centre) puis sur `"Sur l'écran d'accueil"` et c'est plié !
 
-Si tu galère ou que tu trouves un bug, tu peux m'envoyer un mp [ici](https://www.instagram.com/marius.brt/).
+Si tu galères ou que tu trouves un bug, tu peux m'envoyer un mp [ici](https://www.instagram.com/marius.brt/).

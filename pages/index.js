@@ -339,7 +339,15 @@ export default class Home extends Component {
 					<TextInput placeholder="Ton lien" id="url-input" label="Lien de ton calendrier"/>
 					<p id="error"></p>
 					<Button onClick={this.Save}>GO 🔥</Button>
-					<Code id="infos">PS: Tu peux ajouter le site à ton écran d{"'"}accueil pour accéder à ton emploie du temps encore plus rapidement. Pour cela clique sur le bouton partager puis {"\""}ajouter à l{"'"}accueil{"\""}.</Code>
+					<Code id="infos">PS: Tu peux ajouter le site à ton écran d{"'"}accueil pour accéder à ton emploie du temps encore plus rapidement. Pour cela clique sur le bouton partager puis {"\""}ajouter à l{"'"}accueil{"\""}. Plus dinfos <a
+						href="https://github.com/Marius-brt/UM-iCal#utilisation"
+						target="_blank"
+						rel="noreferrer"
+						style={{ color: "#C1C2C5", fontWeight: 600 }}
+						>
+						ici
+						</a>.
+						</Code>
 				</div>
 			</>
 		);
