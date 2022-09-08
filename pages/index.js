@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Component } from "react";
-import { SimpleGrid, Tabs, Badge, Code, TextInput, Button, Kbd } from "@mantine/core";
+import { SimpleGrid, Tabs, Badge, Code, TextInput, Button, Kbd, Center } from "@mantine/core";
 import { IconArrowNarrowRight } from "@tabler/icons";
 
 function padTo2Digits(num) {
@@ -287,6 +287,13 @@ export default class Home extends Component {
 	}
   }
 
+  DeleteData() {
+	if (typeof window !== "undefined") {
+		localStorage.removeItem("ics-url")
+		location.reload()
+	}
+  }
+
   render() {
 	if(this.state.loaded) {
 		return (
@@ -303,7 +310,7 @@ export default class Home extends Component {
 				  <div className="next-date">
 					<Code>Prochain cours dans {this.getCountdown()}</Code>
 				  </div>
-				  <div style={{ marginTop: "20px" }}>{this.state.next}</div>
+				  <div className="next-summary" style={{ marginTop: "20px" }}>{this.state.next}</div>
 				</>
 			  )}
 			  <StyledTabs defaultValue="today">
@@ -326,27 +333,30 @@ export default class Home extends Component {
 				  <SimpleGrid cols={1}>{this.state.tomorrow}</SimpleGrid>
 				</Tabs.Panel>
 			  </StyledTabs>
-			  <Code className="footer">
-				Créer par{" "}
-				<a
-				  href="https://github.com/Marius-brt"
-				  target="_blank"
-				  rel="noreferrer"
-				  style={{ color: "#C1C2C5" }}
-				>
-				  @marius.brt
-				</a>{" "}
-				•{" "}
-				<a
-				  href="https://github.com/Marius-brt/UM-iCal"
-				  target="_blank"
-				  rel="noreferrer"
-				  style={{ color: "#C1C2C5" }}
-				>
-				  Github
-				</a>{" "}
-				du site
-			  </Code>
+			  <Button style={{display: 'block', marginBottom: "20px", width: "100%"}} color="gray" onClick={this.DeleteData}>Changer lien iCal</Button>
+			  <Center>
+				<Code className="footer">
+					Créer par{" "}
+					<a
+					href="https://github.com/Marius-brt"
+					target="_blank"
+					rel="noreferrer"
+					style={{ color: "#C1C2C5" }}
+					>
+					@marius.brt
+					</a>{" "}
+					•{" "}
+					<a
+					href="https://github.com/Marius-brt/UM-iCal"
+					target="_blank"
+					rel="noreferrer"
+					style={{ color: "#C1C2C5" }}
+					>
+					Github
+					</a>{" "}
+					du site
+				</Code>
+			  </Center>
 			</main>
 		  </>
 		);
@@ -357,6 +367,9 @@ export default class Home extends Component {
 					<title>UM Ical</title>
 					<meta name="description" content="L'emploie du temps en mode ez" />
 					<link rel="icon" href="/favicon.ico" />
+					<meta name="viewport" content="width=device-width, user-scalable=no" />
+					<meta name="apple-mobile-web-app-capable" content="yes"></meta>
+					<link rel="apple-touch-icon" href="touch-icon-iphone.png"></link>
 				</Head>
 				<main>
 					<div className="form">

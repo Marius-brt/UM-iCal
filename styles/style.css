@@ -7,6 +7,10 @@ body {
   padding-bottom: 65px;
 }
 
+main {
+	margin-top: 50px;
+}
+
 .next-date {
 	width: 100%;
 	display: flex;
@@ -105,4 +109,10 @@ body {
 .form button {
 	margin-top: 20px;
 	width: 100px;
+}
+
+.next-summary {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
