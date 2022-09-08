@@ -1,14 +1,22 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 65px;
+	-webkit-touch-callout: none; 
+    -webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background: #1A1B1E;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 65px;
 }
 
 main {
 	margin-top: 50px;
+	box-sizing: content-box;
 }
 
 .next-date {
@@ -59,9 +67,8 @@ main {
 	margin-top: 10px;
 }
 
-.card {
-	box-sizing: content-box;
-	width: 260px;
+.card {	
+	width: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -108,11 +115,28 @@ main {
 
 .form button {
 	margin-top: 20px;
-	width: 100px;
+	width: 120px;
+	font-weight: 600;
+	margin-bottom: 40px;
+}
+
+.form input {
+	width: 300px;
 }
 
 .next-summary {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+#error {
+	color: rgb(255, 71, 71);
+	margin: 10px 0 0 0;
+}
+
+#infos {
+	width: 300px;
+	margin-bottom: 40px;
+	opacity: 0.6;
 }

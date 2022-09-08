@@ -1,6 +1,5 @@
-import Head from "next/head";
 import { Component } from "react";
-import { SimpleGrid, Tabs, Badge, Code, TextInput, Button, Kbd, Center } from "@mantine/core";
+import { SimpleGrid, Tabs, Badge, Code, TextInput, Button, Kbd, Loader } from "@mantine/core";
 import { IconArrowNarrowRight } from "@tabler/icons";
 
 function padTo2Digits(num) {
@@ -167,7 +166,8 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-		loaded: false,
+		loaded: true,
+		loading: true,
       next: null,
       today: [],
       tomorrow: [],
@@ -191,7 +191,7 @@ export default class Home extends Component {
 	if(url != "") {
 		const tm = new Date();
 		tm.setDate(tm.getDate() + 1);
-		this.setState({ tomorrowDate: tm, loaded: true });
+		this.setState({ tomorrowDate: tm, loaded: true, loading: true });
 		fetch(
 		  "/api/calendar?ics=" +
 			encodeURIComponent(url)
@@ -227,16 +227,17 @@ export default class Home extends Component {
 				tomorrow.push(GenerateCard(el, dt.colors));
 			}
 			if (today.length == 0)
-			  today.push(<Code>Bah on dirait que ya pas cours 🤷‍♂️</Code>);
+			  today.push(<Code>Bah on dirait que y'a pas cours 🤷‍♂️</Code>);
 			if (tomorrow.length == 0)
-			  tomorrow.push(<Code>Bah on dirait que ya pas cours 🤷‍♂️</Code>);
-			this.setState({ today, tomorrow });
+			  tomorrow.push(<Code>Bah on dirait que y'a pas cours 🤷‍♂️</Code>);
+			this.setState({ today, tomorrow, loading: false });
 		  }).catch(err => {
 			  this.setState({
 				  loaded: false
 			  })
-			//document.getElementById("error").innerText = "Impossible de lire l'url donné"
 		  })
+	} else {
+		this.setState({ loaded: false });
 	}
   }
 
@@ -297,18 +298,11 @@ export default class Home extends Component {
   render() {
 	if(this.state.loaded) {
 		return (
-		  <>
-			<Head>
-			  <title>UM Ical</title>
-			  <meta name="description" content="L'emploie du temps en mode ez" />
-			  <link rel="icon" href="/favicon.ico" />
-			</Head>
-	
-			<main>
+		  <>			
 			  {this.state.next != null && (
 				<>
 				  <div className="next-date">
-					<Code>Prochain cours dans {this.getCountdown()}</Code>
+					<Code>🚨 Prochain cours dans {this.getCountdown()}</Code>
 				  </div>
 				  <div className="next-summary" style={{ marginTop: "20px" }}>{this.state.next}</div>
 				</>
@@ -323,84 +317,30 @@ export default class Home extends Component {
 				  <div className="tab-date">
 					<Badge>{formatDate(new Date())}</Badge>
 				  </div>
-				  <SimpleGrid cols={1}>{this.state.today}</SimpleGrid>
+				  <SimpleGrid cols={1}>{this.state.loading && <Loader/>}{this.state.today}</SimpleGrid>
 				</Tabs.Panel>
 	
 				<Tabs.Panel value="tomorrow" pt="xs">
 				  <div className="tab-date">
 					<Badge>{formatDate(this.state.tomorrowDate)}</Badge>
 				  </div>
-				  <SimpleGrid cols={1}>{this.state.tomorrow}</SimpleGrid>
+				  <SimpleGrid cols={1}>{this.state.loading && <Loader/>}{this.state.tomorrow}</SimpleGrid>
 				</Tabs.Panel>
 			  </StyledTabs>
-			  <Button style={{display: 'block', marginBottom: "20px", width: "100%"}} color="gray" onClick={this.DeleteData}>Changer lien iCal</Button>
-			  <Center>
-				<Code className="footer">
-					Créer par{" "}
-					<a
-					href="https://github.com/Marius-brt"
-					target="_blank"
-					rel="noreferrer"
-					style={{ color: "#C1C2C5" }}
-					>
-					@marius.brt
-					</a>{" "}
-					•{" "}
-					<a
-					href="https://github.com/Marius-brt/UM-iCal"
-					target="_blank"
-					rel="noreferrer"
-					style={{ color: "#C1C2C5" }}
-					>
-					Github
-					</a>{" "}
-					du site
-				</Code>
-			  </Center>
-			</main>
+			  <Button style={{display: 'block', marginBottom: "20px", width: "100%"}} color="gray" onClick={this.DeleteData}>📝 Modifier mon lien iCal</Button>
 		  </>
 		);
 	} else {
 		return (
 			<>
-				<Head>
-					<title>UM Ical</title>
-					<meta name="description" content="L'emploie du temps en mode ez" />
-					<link rel="icon" href="/favicon.ico" />
-					<meta name="viewport" content="width=device-width, user-scalable=no" />
-					<meta name="apple-mobile-web-app-capable" content="yes"></meta>
-					<link rel="apple-touch-icon" href="touch-icon-iphone.png"></link>
-				</Head>
-				<main>
-					<div className="form">
-						<Code>Pour trouver votre lien :</Code>
-						<p><Kbd>Ent</Kbd> {">"} <Kbd>Planning</Kbd> {">"} <Kbd>Onglet iCal</Kbd></p>
-						<TextInput id="url-input" label="Lien calendrier iCal"/>
-						<Button onClick={this.Save}>Ok</Button>
-						<p id="error"></p>
-					</div>
-					<Code className="footer">
-				Créer par{" "}
-				<a
-				  href="https://github.com/Marius-brt"
-				  target="_blank"
-				  rel="noreferrer"
-				  style={{ color: "#C1C2C5" }}
-				>
-				  @marius.brt
-				</a>{" "}
-				•{" "}
-				<a
-				  href="https://github.com/Marius-brt/UM-iCal"
-				  target="_blank"
-				  rel="noreferrer"
-				  style={{ color: "#C1C2C5" }}
-				>
-				  Github
-				</a>{" "}
-				du site
-			  </Code>
-				</main>
+				<div className="form">
+					<Code>Pour trouver ton lien :</Code>
+					<p><Kbd>Ent</Kbd> {">"} <Kbd>Planning</Kbd> {">"} <Kbd>Onglet iCal</Kbd></p>
+					<TextInput placeholder="Ton lien" id="url-input" label="Lien de ton calendrier"/>
+					<p id="error"></p>
+					<Button onClick={this.Save}>GO 🔥</Button>
+					<Code id="infos">PS: Tu peux ajouter le site à ton écran d'accueil pour accéder à ton emploie du temps encore plus rapidement. Pour cela clique sur le bouton partager puis "ajouter à l'accueil".</Code>
+				</div>
 			</>
 		);
 	}
