@@ -328,6 +328,7 @@ export default class Home extends Component {
 				</Tabs.Panel>
 			  </StyledTabs>
 			  <Button style={{display: 'block', marginBottom: "20px", width: "100%"}} color="gray" onClick={this.DeleteData}>📝 Modifier mon lien iCal</Button>
+			  <Button style={{display: 'block', marginBottom: "20px", width: "100%"}} onClick={() => { window.open("https://www.buymeacoffee.com/mariusbrt", '_blank').focus();}}>🍺 Buy me a beer</Button>
 		  </>
 		);
 	} else {
