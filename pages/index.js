@@ -69,16 +69,16 @@ function GenerateCard(el, colors) {
   const color = colors.colors[colors.summaries[summary]];
   return (
     <div className="card" style={{ backgroundColor: color.bg }}>
-      <p className="summary" style={{ color: color.color }}>
+      <p className="summary">
         {el.summary}
       </p>
       <Badge color={color.badge}>{el.location}</Badge>
-      <p className="teacher" style={{ color: color.color }}>
+      <p className="teacher">
         {teacher.join(" ")}
       </p>
-      <div className="hours" style={{ color: color.color }}>
+      <div className="hours">
         <p>{formatTime(el.start)}</p>
-        <IconArrowNarrowRight size={18} />
+        <IconArrowNarrowRight size={18} color="#fff"/>
         <p>{formatTime(el.end)}</p>
       </div>
     </div>

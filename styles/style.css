@@ -79,6 +79,7 @@ main {
 .card p {
 	margin: 0;
 	text-align: center;
+	color: #fff;
 }
 
 .card .summary {
