@@ -13,7 +13,7 @@
     <a href="https://um-ical.vercel.app/"><strong>Mon emploie du temps »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Marius-brt/UM-iCal/issues">J'ai trouver un Bug</a>
+    <a href="https://github.com/Marius-brt/UM-iCal/issues">J'ai trouvé un Bug</a>
     ·
     <a href="https://github.com/Marius-brt/UM-iCal/issues">J'ai une idée d'amélioration</a>
   </p>
