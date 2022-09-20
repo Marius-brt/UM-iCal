@@ -24,13 +24,16 @@ export default async function handler(
   });
   if (f.status != 200 || f.redirected) return res.status(404).send("error");
   const result = await f.text();
-  const midnight = new Date();
+  const now = new Date().toLocaleString('en-EN', {
+    timeZone: 'Europe/Paris',
+  })
+  const midnight = new Date(now);
   midnight.setHours(0, 0, 0, 0);
-  const end = new Date();
+  const end = new Date(now);
   end.setHours(23, 59, 59, 59);
   end.setDate(end.getDate() + 1);
   const data = Object.values(parseICS(result)).filter(
-    (e) => e.type == "VEVENT" && e.start >= midnight && e.end <= end
+    (e) => e.type == "VEVENT" && e.start >= midnight && e.start <= end
   );
   let colors = JSON.parse(
     readFileSync(join(process.cwd(), "colors.json"), { encoding: "utf-8" })
