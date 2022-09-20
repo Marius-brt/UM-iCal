@@ -1,71 +1,93 @@
 {
-    "colors": [
-        {
-            "bg": "#1c7ed6",
-            "badge": "blue"
-        },
-        {
-            "bg": "rgb(253, 114, 114)",
-            "badge": "red"
-        },
-        {
-            "bg": "rgb(173, 28, 214)",
-            "badge": "grape"
-        },
-        {
-            "bg": "rgb(73, 186, 230)",
-            "badge": "cyan"
-        },
-        {
-            "bg": "rgb(238, 196, 67)",
-            "badge": "yellow"
-        },
-        {
-            "bg": "rgb(230, 58, 154)",
-            "badge": "pink"
-        },
-        {
-            "bg": "rgb(140, 14, 138)",
-            "badge": "purple"
-        },
-        {
-            "bg": "rgb(14, 34, 140)",
-            "badge": "indigo"
-        },
-        {
-            "bg": "rgb(45, 183, 151)",
-            "badge": "teal"
-        },
-        {
-            "bg": "rgb(51, 185, 60)",
-            "badge": "green"
-        },
-        {
-            "bg": "rgb(126, 210, 68)",
-            "badge": "lime"
-        },
-        {
-            "bg": "rgb(234, 134, 45)",
-            "badge": "orange"
-        }
-    ],
     "summaries": {
-        "basesdelacomm": 4,
-        "introbd": 5,
-        "runionrentrebut": 6,
-        "introsystmes": 7,
-        "mathsdiscrtes": 8,
-        "basesdelacommmthodesdetravail": 9,
-        "initiationaudveloppement": 10,
-        "sae": 11,
-        "ppp": 0,
-        "economie": 1,
-        "devinterfacesweb": 2,
-        "gestionprojorga": 3,
-        "introarchi": 4,
-        "anglais": 5,
-        "initiationaudev": 6,
-        "lancementsae": 7
+        "basesdelacomm": 1,
+        "sae": 2,
+        "ppp": 3,
+        "introbd": 4,
+        "economie": 5,
+        "mathsdiscrtes": 6,
+        "devinterfacesweb": 7,
+        "gestionprojorga": 8,
+        "introarchi": 9,
+        "anglais": 10,
+        "initiationaudev": 11,
+        "introsystmes": 0,
+        "tpaprpsolnomenclature": 1,
+        "tdaatomistiquestructurelectronique": 2,
+        "devoirsurveilltpmcaniquedesfluides": 3,
+        "cmatomistiquestructurelectronique": 4,
+        "cmequilibresensolution": 5,
+        "tdamtrologieelectricit": 6,
+        "journealternance": 7,
+        "tpamtrologieelectricit": 8,
+        "evalptasa": 9,
+        "cmsa": 10,
+        "tdabureautiquelogicielsconduitedeprojet": 11,
+        "tdasynthseorganique": 0,
+        "tpasynthseorganique": 1,
+        "cmsynthseorganique": 2,
+        "cmatomistiquestructuremolculaire": 3,
+        "ptasa": 4,
+        "tdathermochimieapplique": 5,
+        "cmthermochimieapplique": 6,
+        "tpaequilibresensolution": 7,
+        "tdaatomistiquestructuremolculaire": 8,
+        "tpacintiqueetthermochimieapplique": 9,
+        "tdaanglais": 10,
+        "tpaanglais": 11,
+        "devoirsurveillanglais": 0,
+        "devoirsurveillthermochimieapplique": 1,
+        "devoirsurveillquilibresensolution": 2,
+        "devoirsurveillsynthseorganique": 3,
+        "devoirsurveillmathmatiqueslmentaires": 4,
+        "tpapeakmasterequilibresensolution": 5,
+        "devoirsurveillmtrologielectricit": 6,
+        "devoirsurveillprparationdesolutions": 7,
+        "devoirsurveillexpressioncommunication": 8,
+        "tdaequilibresensolution": 9,
+        "devoirsurveillmcaniquedesfluides": 10,
+        "tdaexpressioncommunication": 11,
+        "devoirsurveillrisqueschimiquesetbpl?bpf": 0,
+        "tpaexpressioncommunication": 1,
+        "rattrapagedss": 2,
+        "cmexpressioncommunication": 3,
+        "tdappp": 4,
+        "cmmtrologieelectricit": 5,
+        "tpappp": 6,
+        "devoirsurveillatomistique": 7,
+        "devoirsurveillintroductionlasciencedesmatriaux": 8,
+        "rattrapagetprisqueschimiquesetbplbpf": 9,
+        "devoirsurveillcintique": 10,
+        "tdaintroductionlasciencedesmatriaux": 11,
+        "cmintroductionlasciencedesmatriaux": 0,
+        "tdamathmatiqueslmentaires": 1,
+        "cmmathmatiqueslmentaires": 2,
+        "tdacintique": 3,
+        "cmcintique": 4,
+        "tpamcaniquedesfluides": 5,
+        "tpasa": 6,
+        "tdamcaniquedesfluides": 7,
+        "cmmcaniquedesfluides": 8,
+        "tutorattda": 9,
+        "prsentationtpdegniechimique": 10,
+        "rculturecommunicationnelleetinformationnelleanglaisaas": 11,
+        "rgcfcomptabilittechniquesdebasedecomptabilitapprofondieetdervisioncomptables": 0,
+        "rgcffinancediagnosticfinancierapprofondietprvisiondubfres": 1,
+        "eqs": 2,
+        "mel": 3,
+        "tdmel": 4,
+        "tpinf": 5,
+        "mf": 6,
+        "tdmf": 7,
+        "tdpsn": 8,
+        "echangemthodologie": 9,
+        "interventionri": 10,
+        "ma": 11,
+        "tdang": 0,
+        "tdma": 1,
+        "tdcomm": 2,
+        "co": 3,
+        "tdco": 4
     },
-    "last": 7
+    "last": 4
 }
