@@ -221,7 +221,7 @@ class Calendar extends Component<any, any> {
                   });
                 }}
               >
-                {this.state.editID ? "Modifier" : "Ajouter"}
+                {this.state.editID ? "📝 Modifier" : "Ajouter"}
               </Button>
               <Button
                 color="gray"
