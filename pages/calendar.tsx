@@ -83,7 +83,7 @@ class Calendar extends Component<any, any> {
                   <div
                     style={{ backgroundColor: cardColors[el.color].bg }}
                   ></div>
-                  <p>{el.text}</p>
+				  {el.summary ? <p>{el.text}</p> : <p className="padd">{el.text}</p>}
                 </div>
 				<IconEdit size={18}
                   onClick={() => {const d = new Date(el.date); this.setState({editID: el.id, summary: el.summary, description: el.text, taskDate: d, color: el.color, minDate: d })}}
