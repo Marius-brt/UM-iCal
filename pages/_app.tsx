@@ -149,6 +149,16 @@ function MyApp({ Component, pageProps }: AppProps) {
     setCalendar((current: any[]) => [...current, item]);
   };
 
+  const modifyTask = (item: CalendarItemInterface) => {
+	try {
+	const newCal = calendar.map(el => {
+		if(el.id == item.id) return item
+		return el
+	})
+	setCalendar(newCal)
+	} catch (e) {}
+  }
+
   const removeFromCalendar = (id: string) => {
     setCalendar(calendar.filter((el: CalendarItemInterface) => el.id != id));
   };
@@ -173,6 +183,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         addToCalendar={addToCalendar}
         removeFromCalendar={removeFromCalendar}
         refresh={refresh}
+		modifyCal={modifyTask}
       />
     </CustomApp>
   );
