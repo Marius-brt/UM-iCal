@@ -14,7 +14,7 @@ import { formatDateLetters } from "../utils/dates";
 import { objectsEqual, cardColors } from "../utils/others";
 import CarouselComponent from "../components/Carousel";
 import { DatePicker } from "@mantine/dates";
-import { IconTrash, IconPlus } from "@tabler/icons";
+import { IconTrash, IconPlus, IconEdit } from "@tabler/icons";
 
 class Calendar extends Component<any, any> {
   constructor(props: any) {
@@ -32,6 +32,8 @@ class Calendar extends Component<any, any> {
       description: "",
       taskDate: now,
       color: 8,
+	  editID: null,
+	  minDate: new Date()
     };
   }
 
@@ -81,12 +83,16 @@ class Calendar extends Component<any, any> {
                   <div
                     style={{ backgroundColor: cardColors[el.color].bg }}
                   ></div>
-                  <p>{el.text}</p>
+				  {el.summary ? <p>{el.text}</p> : <p className="padd">{el.text}</p>}
                 </div>
+				<IconEdit size={18}
+                  onClick={() => {const d = new Date(el.date); this.setState({editID: el.id, summary: el.summary, description: el.text, taskDate: d, color: el.color, minDate: d })}}
+				  className="edit"/>
                 <IconTrash
                   size={18}
                   onClick={() => this.props.removeFromCalendar(el.id)}
                   color="#e03131"
+				  className="delete"
                 />
               </div>
             );
@@ -143,7 +149,7 @@ class Calendar extends Component<any, any> {
             removeFromCalendar={this.props.removeFromCalendar}
           />
         )}
-        {this.state.taskOpen && (
+        {(this.state.taskOpen || this.state.editID) && (
           <div className="task-panel">
             <TextInput
               label="Matière"
@@ -156,13 +162,13 @@ class Calendar extends Component<any, any> {
               value={this.state.description}
               onChange={(e) => this.setState({ description: e.target.value })}
             />
-            <DatePicker
-              minDate={new Date()}
-              label="Date"
-              required
-              value={this.state.taskDate}
-              onChange={(e) => this.setState({ taskDate: e })}
-            />
+			<DatePicker
+				minDate={this.state.minDate}
+				label="Date"
+				required
+				value={this.state.taskDate}
+				onChange={(e) => this.setState({ taskDate: e })}
+			/>            
             <label style={{ fontSize: "14px" }}>Couleur</label>
             <div className="colors">
               {cardColors.map((el, i) => {
@@ -183,30 +189,43 @@ class Calendar extends Component<any, any> {
                   this.state.description == "" || this.state.taskDate == null
                 }
                 onClick={() => {
-                  this.props.addToCalendar({
-                    id: Date.now().toString(),
-                    text: this.state.description,
-                    date: this.state.taskDate,
-                    summary:
-                      this.state.summary != "" ? this.state.summary : null,
-                    color: this.state.color,
-                  });
+					if(this.state.editID)  {
+						this.props.modifyCal({
+							id: this.state.editID,
+							text: this.state.description,
+							date: this.state.taskDate,
+							summary:
+								this.state.summary != "" ? this.state.summary : null,
+							color: this.state.color,
+						})
+					} else {
+						this.props.addToCalendar({
+						  id: Date.now().toString(),
+						  text: this.state.description,
+						  date: this.state.taskDate,
+						  summary:
+							this.state.summary != "" ? this.state.summary : null,
+						  color: this.state.color,
+						});
+					}
                   const now = new Date();
                   now.setHours(22, 0, 0, 0);
                   this.setState({
                     taskOpen: false,
                     summary: "",
                     description: "",
+					editID: null,
                     taskDate: now,
+					minDate: now,
                     color: 8,
                   });
                 }}
               >
-                Ajouter
+                {this.state.editID ? "📝 Modifier" : "Ajouter"}
               </Button>
               <Button
                 color="gray"
-                onClick={() => this.setState({ taskOpen: false })}
+                onClick={() => this.setState({ taskOpen: false, editID: null })}
               >
                 Annuler
               </Button>

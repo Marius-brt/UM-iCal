@@ -19,7 +19,7 @@ export default class App extends Component<any, any> {
     this.state = {
       mounted: false,
       open: false,
-      installed: false,
+      installed: true,
       promptInstall: null,
       supportsPWA: false,
       urlInput: "",
