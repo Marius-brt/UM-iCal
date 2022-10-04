@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       return null;
     if (!isToday(date)) return null;
     const diff = Math.round(Math.abs(+new Date() - +date) / (1000 * 60 * 60));
-    if (diff >= 1) return null;
+    if (diff > 5) return null;
     try {
       const dt = {
         bdeEvents: JSON.parse(bdeEvents),
