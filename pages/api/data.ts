@@ -1,17 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { parseICS } from "node-ical";
-import { readFileSync, writeFileSync } from "fs";
-import { join } from "path";
 import { isValidHttpUrl } from "../../utils/others";
-import mongo from "../../utils/connectBD";
-mongo();
-import BdeEventsSchema from "../../schemas/bdeEvents";
+
+const colors: {[k:string]:number} = {}
+let last = 0
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  console.log("fetch");
   if (
     req.query.ics == undefined ||
     typeof req.query.ics !== "string" ||
@@ -35,38 +32,24 @@ export default async function handler(
   const data = Object.values(parseICS(result)).filter(
     (e) => e.type == "VEVENT" && e.start >= midnight && e.start <= end
   );
-  let colors = JSON.parse(
-    readFileSync(join(process.cwd(), "colors.json"), { encoding: "utf-8" })
-  );
-  let change = false;
   data.forEach((el: any) => {
     if (el["summary"] !== undefined) {
       const summary = el.summary
         .toLocaleLowerCase()
         .replace(/\s/g, "")
         .replace(/[^a-z\s!?]/g, "");
-      if (colors.summaries[summary] == undefined) {
-        colors.last++;
-        if (colors.last > 11) colors.last = 0;
-        colors.summaries[summary] = colors.last;
-        change = true;
+      if (colors[summary] == undefined) {
+        last++;
+        if (colors.last > 11) last = 0;
+        colors[summary] = last;
       }
     }
   });
-  if (change)
-    writeFileSync("colors.json", JSON.stringify(colors, null, 4), {
-      encoding: "utf-8",
-    });
-  const bdeEvents = await BdeEventsSchema.find({}).populate("bde").exec();
   const d = new Date();
   d.setHours(0, 0, 0, 0);
-  const passed = bdeEvents.filter((el) => new Date(el.date) < d);
-  passed.forEach((el) => {
-    BdeEventsSchema.deleteOne({ id: el.id });
-  });
   res.status(200).json({
     events: data,
     colors,
-    bdeEvents,
+    bdeEvents: [],
   });
 }

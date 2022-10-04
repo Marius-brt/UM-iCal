@@ -48,7 +48,7 @@ function parseEvent(el: any, colors: any): EventInterface | null {
     .toLocaleLowerCase()
     .replace(/\s/g, "")
     .replace(/[^a-z\s!?]/g, "");
-  const color = cardColors[colors.summaries[sm]];
+  const color = cardColors[colors[sm]];
   if (el.location == "") el.location = "Inconnu 🤷‍♂️";
   return {
     end,
